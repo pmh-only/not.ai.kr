@@ -1,0 +1,30 @@
+{
+  "name": "not.ai.kr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.mjs",
+  "scripts": {
+    "build:css": "pnpx @tailwindcss/cli -i public/app.css -o public/output.css",
+    "dev:css": "pnpx @tailwindcss/cli -i public/app.css -o public/output.css -w",
+    "dev": "nodemon main.mjs"
+  },
+  "keywords": [],
+  "author": "Minhyeok Park <pmh_only@pmh.codes",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "daisyui": "^5.3.10",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.16"
+  },
+  "dependencies": {
+    "@fontsource-variable/noto-sans-kr": "^5.2.9",
+    "@fontsource/black-han-sans": "^5.2.8",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "lucide": "^0.548.0",
+    "morgan": "^1.10.1",
+    "openai": "^6.7.0",
+    "socket.io": "^4.8.1"
+  }
+}

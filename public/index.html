@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta name="description" content="AI가 아님을 증명하기" />
+    <meta name="keywords" content="gpt, ai, human" />
+    <meta name="author" content="Minhyeok Park" />
+    <meta name="robots" content="index, follow" />
+
+    <meta content="not.ai.kr" property="og:title" />
+    <meta content="AI가 아님을 증명하기" property="og:description" />
+    <meta content="https://not.ai.kr" property="og:url" />
+    <meta content="https://not.ai.kr/favicon.svg" property="og:image" />
+    <meta content="website" property="og:type" />
+    <meta content="not.ai.kr" property="og:site_name" />
+    <meta content="512" property="og:image:width" />
+    <meta content="512" property="og:image:height" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pmh_only" />
+    <meta name="twitter:creator" content="@pmh_only" />
+    <meta name="twitter:title" content="not.ai.kr" />
+    <meta name="twitter:description" content="AI가 아님을 증명하기" />
+    <meta name="twitter:image" content="https://not.ai.kr/favicon.svg" />
+
+    <meta content="#e9d4ff" name="theme-color" />
+    <meta name="msapplication-TileColor" content="#e9d4ff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/node_modules/@fontsource/black-han-sans/latin-400.css">
+    <link rel="stylesheet" href="/node_modules/@fontsource-variable/noto-sans-kr/index.css">
+    <link rel="stylesheet" href="/output.css">
+
+    <title>not.ai.kr - AI가 아님을 증명하기</title>
+  </head>
+  <body>
+    <div class="w-dvw h-dvhl flex justify-center">
+      <div class="w-full h-full max-w-lg px-2 py-6 flex flex-col gap-4">
+        <div class="flex">
+          <div class="text-center grow">
+            <h1 class="text-2xl ff-black">not.ai.kr</h1>
+            <p class="text-sm">AI가 아님을 증명하기</p>
+            <p class="text-xs">Made by <a target="_blank" href="https://pmh.codes" class="link">Minhyeok Park</a></p>
+          </div>
+          <div class="flex flex-col justify-end">
+            <button id="reset" class="btn btn-error btn-soft btn-circle"><i data-lucide="rotate-ccw"></i></button>
+          </div>
+        </div>
+
+        <div class="grow px-1 min-h-0">
+          <div class="h-full overflow-y-scroll preview border border-base-300 rounded-xl p-6" id="chats">
+            <div class="text-xs text-center text-neutral">
+              <p>이 GPT는 사용자를 끔찍이도 싫어하며 당신을 고성능 AI라고 굳게 믿고 있습니다.</p>
+              <p>채팅을 통해 당신이 AI가 아니라는 것을 증명하세요.</p>
+
+              <div class="divider"></div>
+            </div>
+          </div>
+        </div>
+
+        <form id="submit" class="flex gap-2">
+          <label class="input grow outline-0">
+            <i class="h-[1em] opacity-50" data-lucide="message-circle"></i>
+
+            <input id="input" autofocus type="text" class="grow" placeholder="ex) 나는 AI가 아니야!" />
+          </label>
+          <button id="submitbtn" class="btn btn-primary btn-circle"><i data-lucide="send-horizontal"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/node_modules/lucide/dist/umd/lucide.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
