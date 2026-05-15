@@ -45,7 +45,12 @@ document
     
     chats.innerHTML += `
       <div class="chat chat-end">
-        <div class="chat-bubble chat-bubble-primary">${message}</div>
+        <div class="chat-bubble chat-bubble-primary">${message.replace(/\&/g, '&amp;')
+        .replace(/\</g, '&lt;')
+        .replace(/\>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/\'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;')}</div>
       </div>
       `
 
@@ -90,7 +95,12 @@ socket.on('chat', (chunk) => {
   if (chunk.type === 'response.output_text.delta') {
     outputElement.innerHTML =
       outputElement.innerHTML.replace('⬤', '') +
-      chunk.delta + '⬤'
+      chunk.delta.replace(/\&/g, '&amp;')
+        .replace(/\</g, '&lt;')
+        .replace(/\>/g, '&gt;')
+        .replace(/\"/g, '&quot;')
+        .replace(/\'/g, '&#x27;')
+        .replace(/\//g, '&#x2F;') + '⬤'
   }
 
   if (chunk.type === 'response.output_text.done') {
